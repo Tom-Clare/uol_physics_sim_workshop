@@ -40,7 +40,9 @@ namespace PhysicsEngine
 	class MyScene : public Scene
 	{
 		Plane* plane;
-		Box* box;
+		Box* box1;
+		Box* box2;
+		Sphere* sphere1;
 
 	public:
 		///A custom scene class
@@ -61,9 +63,17 @@ namespace PhysicsEngine
 			plane->Color(PxVec3(210.f/255.f,210.f/255.f,210.f/255.f));
 			Add(plane);
 
-			box = new Box(PxTransform(PxVec3(.0f,10.f,.0f)));
-			box->Color(color_palette[0]);
-			Add(box);
+			box1 = new Box(PxTransform(PxVec3(.0f,10.f,.0f)));
+			box1->Color(color_palette[0]);
+			Add(box1);
+
+			box2 = new Box(PxTransform(PxVec3(.0f, 8.f, .0f)));
+			box2->Color(color_palette[1]);
+			Add(box2);
+
+			sphere1 = new Sphere(PxTransform(PxVec3(1.f, 9.f, .0f)));
+			sphere1->Color(color_palette[1]);
+			Add(sphere1);
 		}
 
 		//Custom udpate function
